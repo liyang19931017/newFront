@@ -1,0 +1,16 @@
+<div class="budget-tree">
+    <input class="budget-tree-name" *ngIf="isNeedQuery" type="text" [(ngModel)]="queryName" placeholder="请输入关键字" (ngModelChange)="changeQueryName($event)">
+    <div class="budget-tree-ul sild-ri" *ngIf="dataTree && dataTree.length > 0">
+        <app-ace-multi-tree-control [(treeData)]="dataTree" [disableInfluence]="disableInfluence" [keyName]="keyName" ></app-ace-multi-tree-control>
+    </div>
+    <div class="loading" *ngIf="loading">
+        <div style="position: relative;top: 43%;text-align: center;">
+            <span class="ant-spin-dot">
+                <i style="opacity: 1;"></i>
+                <i style="opacity: 1;"></i>
+                <i style="opacity: 1;"></i>
+                <i style="opacity: 1;"></i>
+            </span>
+        </div>
+    </div>
+  </div>

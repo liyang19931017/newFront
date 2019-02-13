@@ -1,0 +1,80 @@
+.header-content{
+    height: 100%;
+    width: 100%;
+    background-color: #3C3E4D;
+    position: relative;
+    .title{
+        color: #FFFFFF;
+    }
+    .content-left{
+        float: left;
+        height: 100%;
+        line-height: 48px;
+    }
+    .content-right{
+        float: right;
+        height: 100%;
+        line-height: 48px;
+        color: #FFFFFF;
+        .left{
+            float: right;
+             margin-right: 39px;
+        }
+        .right{
+            float: right;
+            width: 150px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            padding-left: 15px;
+            text-align: left;
+            .logo{
+                width: 26px;
+                height: 26px;
+                border-radius: 15px;
+            }
+        }
+        .text-right{
+            width: 150px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: left;
+        }
+        .menu-drop-li{
+            height: 40px;
+            cursor: pointer;
+        }
+    }
+    .icon-img{
+        background-color: #B3B3B3;
+        border-radius: 12px;
+        padding-left: 3.5px;
+        padding-right: 2.5px;
+    }
+    .menu-drop{
+        top: 48px;
+        background-color: #2D2F3E;
+        position: relative;
+        left: calc(~"85% - 150px");
+        width: 150px;
+        position: absolute;
+        z-index: 999;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        .menu-drop-li{
+            height: 60px;
+            line-height: 60px;
+            padding-left: 15px;
+        }
+        .menu-drop-li:hover{
+            background-color: #4F5C72;
+        }
+    }
+}
+:host ::ng-deep .content-right .ant-dropdown-menu{
+    width: 116px;
+    margin-top: -4px;
+    border-radius: 0;
+    background-color: #2D2F3E;
+} 

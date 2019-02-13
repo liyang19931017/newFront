@@ -1,0 +1,25 @@
+<div [class]="className">
+  <nz-upload 
+    [nzAction]="imgUrl"
+    [nzListType]="showType"
+    [nzBeforeUpload]="checkImg"
+    [(nzFileList)]="fileList"
+    [nzCustomRequest]="upload"
+    [nzShowButton]="fileList.length < account && showAdd"
+    (nzChange)="changeImg($event)"
+    [nzDisabled]="!showAdd || disabled"
+    [nzRemove]="remove"
+    [nzPreview]="handlePreview">
+      <i *ngIf="showType == 'picture-card' && !backgroundImg" class="anticon anticon-plus"></i>
+      <div *ngIf="showType == 'picture-card' && !backgroundImg" class="font-18 ant-upload-text">上传</div>
+      <button *ngIf="showType == 'picture' && !backgroundImg" [nzSize]="'large'" nz-button>
+        <i class="font-18 anticon anticon-upload "></i><span class="font-18">上传</span>
+      </button>
+      <img *ngIf="backgroundImg" [src]="backgroundImg" />
+  </nz-upload>
+  <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+    <ng-template #modalContent>
+      <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+    </ng-template>
+  </nz-modal>
+</div>

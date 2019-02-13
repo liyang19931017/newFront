@@ -1,0 +1,21 @@
+<div class="ace-multi-tree-control">
+    <div style="float: left;width: 100%;" *ngFor="let treeDataOne of treeData;index as i;">
+       <div class="close-open-img" *ngIf="treeDataOne.children && treeDataOne.children.length > 0 && !treeDataOne.notShow && i <= index">
+         <img src="assets/img/tree/close.png" (click)="treeDataOne.open = !treeDataOne.open" [hidden]="treeDataOne.open" />
+         <img src="assets/img/tree/open.png" (click)="treeDataOne.open = !treeDataOne.open" [hidden]="!treeDataOne.open"/>
+       </div>
+       <div *ngIf="(!treeDataOne.children || treeDataOne.children.length == 0) && !treeDataOne.notShow && i <= index" style="width:30px;height:24px;float: left;"></div>
+       <div class="content" *ngIf="!treeDataOne.notShow && i <= index">
+        <label class="content-label" nz-checkbox [(ngModel)]="treeDataOne.checked" [nzDisabled]="treeDataOne.disable" (ngModelChange)="updateAllChecked(treeDataOne)" [nzIndeterminate]="treeDataOne.halfChecked">
+          <span title="{{treeDataOne[keyName]}}">{{treeDataOne[keyName]}}</span>
+        </label>
+       </div>
+       <div style="float: left;position: relative;width: calc(100% - 20px);margin-left: 20px;" *ngIf="i <= index && treeDataOne.children && treeDataOne.children.length > 0 && treeDataOne.open && !treeDataOne.notShow">
+         <app-ace-multi-tree-control  [treeData]="treeDataOne.children" [disableInfluence]="disableInfluence" (selectChange)="selectChangeFun($event)" [keyName]="keyName" [parent]="treeDataOne"></app-ace-multi-tree-control>
+      </div>
+    </div>
+    <div class="set-more" *ngIf="treeData && treeData.length > index " (click)="setIndex()">
+      请点击加载更多
+    </div>
+
+</div>

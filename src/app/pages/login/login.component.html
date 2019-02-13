@@ -1,0 +1,124 @@
+<div class="login">
+  <div class="header">
+    <img class="logo" src="assets/img/login/customer_logo.png" />
+  </div>
+  <div class="content">
+    <div class="left-content">
+      <img class="content-logo" src="assets/img/login/login-logo.png" />
+    </div>
+    <div class="right-content">
+      <div class="right-content-login">
+        <div class="login-title font-18">
+          <div [ngStyle]="{'background-color':loginType == '1'?'#FFFFFF':''}" class="service-login" (click)="selectFun('1')">
+            <span [ngStyle]="{'color':loginType == '1'?'#287AD9':''}">服务商登录</span>
+          </div>
+          <div [ngStyle]="{'background-color':loginType == '2'?'#FFFFFF':''}" class="account-login" (click)="selectFun('2')">
+            <span [ngStyle]="{'color':loginType == '2'?'#287AD9':''}">客户登录</span>
+          </div>
+        </div>
+        <div class="login-content" *ngIf="loginType == '1'">
+          <div class="login-phone">
+            <div class="font-14 phone-tips">
+              <div class="fl-le">
+                  <span>请输入手机号码</span>
+              </div>
+              <div class="fl-ri" style="color:red;">
+                  <span>{{loginNameError}}</span>
+              </div>
+            </div>
+            <div class="phone-content">
+              <span class="phone-content-logo">
+                <i class="icon iconfont icon-mobile font-20 icon-font-li-he"></i>
+              </span>
+              <input maxlength="11" class="phone-input font-16" nz-input placeholder="请输入手机号码" [(ngModel)]="phoneValue">
+            </div>
+          </div>
+          <div class="login-pwd">
+            <div class="font-14 pwd-tips">
+              <div class="fl-le">
+                  <span>请输入密码</span>
+              </div>
+              <div class="fl-ri" style="color:red;">
+                  <span>{{pawssedError}}</span>
+              </div>
+            </div>
+            <div class="pwd-content">
+              <span class="pwd-content-logo">
+                <i class="icon iconfont icon-lock font-20 icon-font-li-he"></i>
+              </span>
+              <input *ngIf="!encryption" type="password" class="pwd-input font-16" nz-input placeholder="请输入密码" [(ngModel)]="pwdValue">
+              <input *ngIf="encryption" class="pwd-input font-16" nz-input placeholder="请输入密码" [(ngModel)]="pwdValue">
+              <span *ngIf="!encryption" (click)="encryption = !encryption" class="pwd-content-right-logo">
+                <i class="icon iconfont icon-yanjing font-20 icon-font-li-he"></i>
+              </span>
+              <span *ngIf="encryption" (click)="encryption = !encryption" class="pwd-content-right-logo">
+                <i class="icon iconfont icon-yanjing1 font-20 icon-font-li-he"></i>
+              </span>
+            </div>
+            <div class="font-14 miss-pwd">
+              <span (click)="goRetrieve()" class="hr-cli">忘记密码?</span>
+            </div>
+          </div>
+          <div class="go-login">
+            <button class="go-login-button font-14" nz-button nzType="primary" [disabled]="loginDisable" (click)="login()">登录</button>
+          </div>
+          <div class="register-login font-14">
+            <span class="co-45">没有账号?</span>
+            <span (click)="goRegister()" class="hr-cli">立即注册</span>
+          </div>
+          <div class="help-login font-14 co-45">
+            <span>* 如需帮助请联系 400-6666-886</span>
+          </div>
+        </div>
+        <div class="login-content" *ngIf="loginType == '2'">
+            <div class="login-phone">
+              <div class="font-14 phone-tips">
+                  <div class="fl-le">
+                      <span>请输入手机号码</span>
+                  </div>
+                  <div class="fl-ri" style="color:red;">
+                      <span>{{loginNameError2}}</span>
+                  </div>
+              </div>
+              <div class="phone-content">
+                <span class="phone-content-logo">
+                  <i class="icon iconfont icon-mobile font-20 icon-font-li-he"></i>
+                </span>
+                <input class="phone-input font-16" maxlength="11" nz-input placeholder="请输入手机号码" [(ngModel)]="phoneValue2">
+              </div>
+            </div>
+            <div class="login-pwd">
+              <div class="font-14 pwd-tips">
+                <span></span>
+                <div class="fl-le">
+                    <span>请输入密码</span>
+                </div>
+                <div class="fl-ri" style="color:red;">
+                    <span>{{pawssedError2}}</span>
+                </div>
+              </div>
+              <div class="pwd-content">
+                <span class="pwd-content-logo">
+                  <i class="icon iconfont icon-lock font-20 icon-font-li-he"></i>
+                </span>
+                <input *ngIf="!encryption2" type="password" class="pwd-input font-16" nz-input placeholder="请输入密码" [(ngModel)]="pwdValue2">
+                <input *ngIf="encryption2" class="pwd-input font-16" nz-input placeholder="请输入密码" [(ngModel)]="pwdValue2">
+                <span *ngIf="!encryption2" (click)="encryption2 = !encryption2" class="pwd-content-right-logo">
+                  <i class="icon iconfont icon-yanjing font-20 icon-font-li-he"></i>
+                </span>
+                <span *ngIf="encryption2" (click)="encryption2 = !encryption2" class="pwd-content-right-logo">
+                  <i class="icon iconfont icon-yanjing1 font-20 icon-font-li-he"></i>
+                </span>
+              </div>
+            </div>
+            <div class="go-login-2">
+              <button class="go-login-button font-14" nz-button nzType="primary" [disabled]="loginDisable" (click)="login()">登录</button>
+            </div>
+            <div class="help-login font-14 co-45">
+              <span>* 如需帮助请联系 400-6666-886</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

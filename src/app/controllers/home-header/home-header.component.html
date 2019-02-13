@@ -1,0 +1,38 @@
+<div class="header-content">
+  <div class="header-content-middle service-content">
+    <div class="font-18 content-left">
+      <span style="cursor: pointer;" (click)="gotoDefault()" class="title">{{ace.header}}</span>
+    </div>
+    <div class="content-right font-14">
+      <div (mouseover)="showSetting()" [style.background-color]="hiddenMenu?'':'#2F3140'" (mouseout)="hiddenSetting()" class="right">
+        <span class="icon-img"><i class="icon iconfont icon-user font-14"></i></span>
+        <span style="margin-left: 15px;">{{loginName}}</span>
+      </div>
+      <div (mouseover)="showSetting()" (mouseout)="hiddenSetting()" class="menu-drop" [hidden]="hiddenMenu">
+        <div class="menu-drop-li" (click)="goAccount()">
+          <span class="icon-img"><i class="icon iconfont icon-setting font-14"></i></span>
+          <span style="margin-left: 15px;">账户</span>
+        </div>
+        <div class="menu-drop-li" (click)="logout()">
+            <span class="icon-img"><i class="icon iconfont icon-logout font-14"></i></span>
+            <span style="margin-left: 15px;">退出</span>
+          </div>
+      </div>
+      <!-- <nz-dropdown class="right" nzTrigger="" [nzVisible]="true">
+        
+        <ul nz-menu nzSelectable>
+          <li class="menu-drop-li" nz-menu-item>
+            <span class="font-14">账户</span>
+          </li>
+          <li class="menu-drop-li" nz-menu-item>
+              <span class="font-14">退出</span>
+          </li>
+        </ul>
+      </nz-dropdown> -->
+
+      <!-- <div class="left">
+        <span>{{ace.tips}}</span>
+      </div> -->
+    </div>
+  </div>
+</div>

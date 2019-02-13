@@ -1,0 +1,20 @@
+<div class="register-add">
+  <div class="register-add-title in-block">
+    <div class="fo-le font-18 co-85">
+      <span>裁剪图片</span>
+    </div>
+    <div class="colse fo-ri" (click)="cancel()">
+      <span>
+        <i class="icon font-18 co-65 hr-hover iconfont icon-close"></i>
+      </span>
+    </div>
+  </div>
+  <div class="bannerConent">
+      <!-- <angular-cropper [cropperOptions]="config" [imageUrl]="imageUrl"></angular-cropper> -->
+    <angular-cropper *ngIf="show" [settings]="settings" #angularCropper [(cropperOptions)]="config" [(imageUrl)]="url"></angular-cropper>
+  </div>
+  <div class="register-add-foot in-block">
+    <button class="cancel-btn" [nzSize]="'large'" nz-button nzType="default" (click)="cancel()">取消</button>
+    <button nz-button [nzSize]="'large'" nzType="primary" (click)="save()">确认保存</button>
+  </div>
+</div>

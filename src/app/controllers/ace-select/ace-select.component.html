@@ -1,0 +1,3 @@
+<nz-select [nzDisabled]="disabled" [nzAllowClear]="allowClear" class="font-14" [style.width]="width" style="height:40px;" (ngModelChange)="change($event)" [(ngModel)]="select" [nzSize]="'large'" nzShowSearch nzPlaceHolder="{{placeholder}}">
+  <nz-option *ngFor="let optionsOne of options" nzValue="{{optionsOne.id}}" nzLabel="{{optionsOne.text}}"></nz-option>
+</nz-select>

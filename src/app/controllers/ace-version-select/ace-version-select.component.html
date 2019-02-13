@@ -1,0 +1,9 @@
+<div class="version-select">
+    <div [ngStyle]="{'background-color':optionsOne.id == select.id?'#287AD9':''}" (click)="selectTab(optionsOne)" class="version-tab font-14 co-85" *ngFor="let optionsOne of options;index as i;">
+        <div [ngStyle]="{'background-color':optionsOne.id == select.id?'#FFFFFF':optionsOne.color}" class="version-tab-col"></div>
+        <div title="{{optionsOne.text + optionsOne.statusText}}" class="version-tab-text">
+          <span>{{optionsOne.text}}</span>
+          <span style="margin-left: 10px;">{{optionsOne.statusText}}</span>
+        </div>
+    </div>
+</div>

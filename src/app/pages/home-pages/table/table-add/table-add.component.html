@@ -1,0 +1,78 @@
+<div class="register-add">
+  <div class="register-add-title in-block">
+    <div class="fo-le font-18 co-85">
+      <span>表单注册</span>
+    </div>
+    <div class="colse fo-ri" (click)="cancel()">
+      <span>
+        <i class="icon font-18 co-65 hr-hover iconfont icon-close"></i>
+      </span>
+    </div>
+  </div>
+  <div class="register-add-content in-block">
+    <div class="register-add-content-left">
+      <div class="title-name font-16 co-85">
+        <span style="color:red;">*</span>
+        <span>表单名称</span>
+      </div>
+      <div class="title-content">
+        <app-ace-input [disabled]="detail" [showError]="showError.name" (focus)="focusName('name')" (blur)="blurName('name')" (valueChange)="changeRequire($event,'name')"
+          [placeholder]="'请输入表单名称'" [(value)]="nameValue"></app-ace-input>
+      </div>
+    </div>
+    <div class="register-add-content-right">
+      <div class="title-name font-16 co-85">
+        <span style="color:red;">*</span>
+        <span>表单类型</span>
+      </div>
+      <div class="title-content">
+        <app-ace-select [disabled]="detail" (valueChange)="select = $event" [select]="select" [placeholder]="'请选择接口类型'" [options]="options"></app-ace-select>
+      </div>
+    </div>
+  </div>
+  <div class="register-add-content in-block">
+    <div class="register-add-content-left">
+      <div class="title-name font-16 co-85">
+        <span style="color:red;">*</span>
+        <span>web端表单URL</span>
+      </div>
+      <div class="title-content">
+        <app-ace-input [disabled]="detail" [showError]="showError.webUrl" (focus)="focusName('webUrl')" (blur)="blurName('webUrl')" (valueChange)="changeRequire($event,'webUrl')"
+          [placeholder]="'请输入web端表单URL'" [(value)]="webUrlValue"></app-ace-input>
+      </div>
+    </div>
+    <div class="register-add-content-right">
+      <div class="title-name font-16 co-85">
+        <span>web端表单参数</span>
+      </div>
+      <div class="title-content">
+        <app-ace-input [disabled]="detail" [placeholder]="'请输入web端表单参数'" [(value)]="webParamValue"></app-ace-input>
+      </div>
+    </div>
+  </div>
+  <div class="register-add-content in-block">
+    <div class="register-add-content-left">
+      <div class="title-name font-16 co-85">
+        <span style="color:red;">*</span>
+        <span>app端表单URL</span>
+      </div>
+      <div class="title-content">
+        <app-ace-input [disabled]="detail" [showError]="showError.appUrl" (focus)="focusName('appUrl')" (blur)="blurName('appUrl')" (valueChange)="changeRequire($event,'appUrl')"
+          [placeholder]="'请输入app端表单URL'" [(value)]="appUrlValue"></app-ace-input>
+      </div>
+    </div>
+    <div class="register-add-content-right">
+      <div class="title-name font-16 co-85">
+        <span>app端表单参数</span>
+      </div>
+      <div class="title-content">
+        <app-ace-input [disabled]="detail" [placeholder]="'请输入app端表单参数'" [(value)]="appParamValue"></app-ace-input>
+      </div>
+    </div>
+  </div>
+
+  <div  class="register-add-foot in-block">
+    <button *ngIf="!detail" class="cancel-btn" [nzSize]="'large'" nz-button nzType="default" (click)="cancel()">取消</button>
+    <button *ngIf="!detail" nz-button [nzSize]="'large'" nzType="primary" (click)="save()">确认保存</button>
+  </div>
+</div>

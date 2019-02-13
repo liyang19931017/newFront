@@ -1,0 +1,73 @@
+.table{
+    font-size: 16px;
+    height: 100%;
+    display: inline-block;
+    width: 100%;
+    .table-left{
+        float: left;
+        width: 16%;
+        height: 100%;
+        padding: 20px;
+        overflow: auto;
+    }
+    .table-right{
+        float: left;
+        width: 84%;
+        height: 100%;
+    }
+    .table-query{
+        width: 100%;
+        min-height: 41px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #D8D8D8;
+        .table-query-initial{
+            width: 100%;
+            min-height: 41px;
+            margin-top: 10px;
+        }
+        .table-query-condition{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .button-margin{
+            margin-left: 10px;
+        }
+        @keyframes fade-in {  
+            0% {opacity: 0;}/*初始状态 透明度为0*/  
+            40% {opacity: 0;}/*过渡状态 透明度为0*/  
+            100% {opacity: 1;}/*结束状态 透明度为1*/  
+        }  
+        @-webkit-keyframes fade-in {/*针对webkit内核*/  
+            0% {opacity: 0;}  
+            40% {opacity: 0;}  
+            100% {opacity: 1;}  
+        }  
+        .show-more {    
+            animation: fade-in;/*动画名称*/  
+            animation-duration: 0.5s;/*动画持续时间*/  
+            -webkit-animation:fade-in 0.5s;/*针对webkit内核*/  
+        } 
+    }
+    .table-operate{
+        width: 100%;
+        margin-top: 10px;
+        .table-operate-button{
+            padding-left: 15px;
+            padding-right: 15px;
+            border: 1px solid #287AD9;
+            border-radius: 4px;
+            color: #287AD9;
+            margin-right: 20px;
+            float: left;
+            cursor: pointer;
+        }
+    }
+    .table-table{
+        width: 100%;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+.fo-ri{
+    float: right;
+}

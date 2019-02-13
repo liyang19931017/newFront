@@ -1,0 +1,12 @@
+
+
+<div style="width:100%;">
+  <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.inputTips" [nzVisible]="showError.error">
+    <textarea row="4" (focus)="focusInput()" (blur)="blurInput()"
+    [style.border-color]="showError.inputError?'#CC5252':''" style="height:111px;" nz-input nz-tooltip [(ngModel)]="value" [placeholder]="placeholder" (ngModelChange)="change($event)"></textarea>
+    <div style="text-align: right;" class="co-45" [style.color]="value.length > length ? '#CC5252':''" [style.opacity]="value.length > length ? '1':''">
+      <span>{{value.length}}/</span>
+      <span>{{length}}</span>
+    </div>
+  </nz-tooltip>
+</div>

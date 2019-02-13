@@ -1,0 +1,32 @@
+<div class="header-content">
+    <div class="header-content-middle service-content">
+      <div class="font-18 content-left" [style.background-color]="hiddenMenuSetting?'':'#2F3140'" (mouseover)="showMenu()" (mouseout)="hiddenMenuFun()">
+        <span style="cursor: pointer;" class="title">{{ace.header}}</span>
+        <span class="title">|</span>
+        <span class="title">管理后台</span>
+      </div>
+      <div class="content-right font-14">
+        <div (mouseover)="showSetting()" [style.background-color]="hiddenMenu?'':'#2F3140'" (mouseout)="hiddenSetting()" class="right">
+          <span class="icon-img"><i class="icon iconfont icon-user font-14"></i></span>
+          <span style="margin-left: 15px;">{{loginName}}</span>
+        </div>
+        <div (mouseover)="showSetting()" (mouseout)="hiddenSetting()" class="menu-drop" [hidden]="hiddenMenu">
+          <div class="menu-drop-li" (click)="logout()">
+              <span class="icon-img"><i class="icon iconfont icon-logout font-14"></i></span>
+              <span style="margin-left: 15px;">退出</span>
+            </div>
+        </div>
+        <div (mouseover)="showMenu()" (mouseout)="hiddenMenuFun()" class="menu-drop-menu font-18" [hidden]="hiddenMenuSetting">
+          <div class="menu-drop-li" (click)="gotoPage('default')">
+              <span style="margin-left: 15px;" >任务管理列表</span>
+            </div>
+          <div class="menu-drop-li" (click)="gotoPage('dictionary')">
+              <span style="margin-left: 15px;" >业务字典管理列表</span>
+            </div>
+          <div class="menu-drop-li" (click)="gotoPage('configuration')">
+              <span style="margin-left: 15px;" >应用中心管理后台</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+<nz-tooltip nzTrigger="" [nzPlacement]="direction" [nzTitle]="showError.inputTips" [nzVisible]="showError.error">
+    <input class="font-14" (focus)="focusInput()" (blur)="blurInput()"
+    [style.border-color]="showError.inputError?'#CC5252':''"
+    [style.width]="width"
+     [nzSize]="'large'" nz-input nz-tooltip [placeholder]="placeholder" [maxlength]="length" [disabled]="disabled" [(ngModel)]="value" (ngModelChange)="change($event)">
+</nz-tooltip>

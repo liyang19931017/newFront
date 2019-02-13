@@ -1,0 +1,130 @@
+{
+    "errcode": "0",
+    "errmsg": "成功",
+    "data": {
+        "list":[
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            },
+            {
+                "id": "2",
+                "tenantId": "1",
+                "accountCode": "2018-B1",
+                "accountName": "能源消耗及常规缴费",
+                "budgetAnnual": "2018",
+                "budgetMoney": "300760000",
+                "parentName": "2018年度",
+                "projectName": "2018年度",
+                "description": "description"
+            }
+        ],
+        "total":11
+    }
+}

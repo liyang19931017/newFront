@@ -1,0 +1,119 @@
+<div class="login">
+  <div class="header">
+    <img class="logo" src="assets/img/login/customer_logo.png" />
+    <div class="go-login" (click)="goLogin()">
+      <span class="hr-cli font-14">已有账号?立即登录</span>
+    </div>
+  </div>
+  <div class="content">
+    <div class="edit-content">
+      <div class="title font-18 co-85">
+        <span>请填写注册信息</span>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">请输入手机号</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-mobile font-20 icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.phoneTips" [nzVisible]="showError.phone">
+            <input class="phone-input font-16" maxlength="11" nz-input nz-tooltip placeholder="请输入手机号" (ngModelChange)="phoneChange($event)" (focus)="focusInput('phone')" (blur)="blurInput('phone')"
+             [style.border-color]="showError.phoneInput?'#CC5252':''" [(ngModel)]="phoneValue">
+          </nz-tooltip>
+        </div>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">请输入验证码</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-yanzhengma font-20  icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.verificationTips" [nzVisible]="showError.verification">
+            <input class="phone-input font-16" (ngModelChange)="verificationChange($event)" (focus)="focusInput('verification')"  (blur)="blurInput('verification')" 
+            [style.border-color]="showError.verificationInput?'#CC5252':''"
+            style="width:258px;" nz-input nz-tooltip placeholder="请输入验证码" [(ngModel)]="verificationValue">
+          </nz-tooltip>
+          
+          <button *ngIf="!codeDisable" class="font-14 phone-button" nz-button nzType="primary" [nzSize]="'large'" 
+          [disabled]="showError.phoneInput || phoneValue === ''" (click)="getIdentifyingCode()">获取短信验证码</button>
+          <button class="font-14 phone-button" *ngIf="codeDisable" [disabled]="true" nz-button nzType="primary" [nzSize]="'large'" >{{time}}秒后可重新获取</button>
+        </div>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">请输入密码</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-lock font-20 icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.passwardTips" [nzVisible]="showError.passward">
+            <input class="phone-input font-16" (focus)="focusInput('passward')" (blur)="blurInput('passward')" 
+            [style.border-color]="showError.passwardInput?'#CC5252':''" 
+            nz-input nz-tooltip placeholder="请输入密码" (ngModelChange)="validateNewPasswordRightNow($event)" type="password" [(ngModel)]="passwordValue">
+          </nz-tooltip>
+          
+        </div>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">再次确认密码</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-lock font-20 icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.copyPasswardTips" [nzVisible]="showError.copyPassward">
+            <input class="phone-input font-16" (focus)="focusInput('copyPassward')" (blur)="blurInput('copyPassward')" 
+            [style.border-color]="showError.copyPasswardInput?'#CC5252':''" 
+             nz-input nz-tooltip placeholder="请输入确认密码" (ngModelChange)="validateNewSurePasswordRightNow($event)" type="password" [(ngModel)]="passwordSureValue">
+          </nz-tooltip>
+        </div>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">请输入邮箱地址</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-mail font-20 icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.emailTips" [nzVisible]="showError.email">
+            <input maxlength="32" class="phone-input font-16" (focus)="focusInput('email')" (blur)="blurInput('email')" 
+            [style.border-color]="showError.emailInput?'#CC5252':''" 
+            (ngModelChange)="emailChange($event)"
+            nz-input nz-tooltip placeholder="请输入地址" [(ngModel)]="emailValue">
+          </nz-tooltip>
+          
+        </div>
+      </div>
+      <div class="content-input">
+        <div class="input-title">
+          <span class="co-85 font-16">请输入企业或组织名称</span>
+        </div>
+        <div class="content-content">
+          <span class="phone-content-logo">
+            <i class="icon iconfont icon-qiyegongchangjianzhu font-20 icon-font-li-he"></i>
+          </span>
+          <nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.originationTips" [nzVisible]="showError.origination">
+              <input class="phone-input font-16" (focus)="focusInput('origination')" (blur)="blurInput('origination')" 
+              [style.border-color]="showError.originationInput?'#CC5252':''" 
+              (ngModelChange)="originationChange($event)"
+              nz-input nz-tooltip placeholder="请输入企业或组织名称" [(ngModel)]="originationValue">
+          </nz-tooltip>
+          
+        </div>
+      </div>
+      <div class="go-login-2">
+        <button class="go-login-button font-14" nz-button nzType="primary" [disabled]="registerDisable" (click)="register()">注册</button>
+      </div>
+      <div class="tips">
+        <span class="font-14 co-45">* 如需帮助请联络 400-6666-886</span>
+      </div>
+    </div>
+  </div>
+</div>

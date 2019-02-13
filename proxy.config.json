@@ -1,0 +1,11 @@
+{
+  "/hlms/api": {
+    "target": "http://192.168.50.231:10130",
+    "secure": false,
+    "pathRewrite ": {
+      "^/api": ""
+    },
+    "changeOrigin" : true,
+    "logLevel": "debug"
+  }
+}

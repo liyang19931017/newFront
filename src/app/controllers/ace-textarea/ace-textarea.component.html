@@ -1,0 +1,4 @@
+<nz-tooltip nzTrigger="" nzPlacement="right" nzOverlayClassName="right-input" [nzTitle]="showError.inputTips" [nzVisible]="showError.error">
+        <textarea row="4" (focus)="focusInput()" (blur)="blurInput()"
+        [style.border-color]="showError.inputError?'#CC5252':''" style="height:111px;" nz-input nz-tooltip [(ngModel)]="value" [placeholder]="placeholder" [maxlength]="length" (ngModelChange)="change($event)"></textarea>
+</nz-tooltip>

@@ -1,0 +1,70 @@
+{
+    "errcode": "0",
+    "errmsg": "成功",
+    "data": [
+        {
+            "id": "1",
+            "parentId": null,
+            "projectLevel": "1",
+            "tenantId": "1",
+            "projectCode": "B",
+            "projectName": "预算项目",
+            "isEffective": "1",
+            "children": [
+                {
+                    "id": "2",
+                    "parentId": "1",
+                    "projectLevel": "2",
+                    "tenantId": "1",
+                    "projectCode": "B1",
+                    "projectName": "能源消耗及常规缴费",
+                    "isEffective": "1",
+                    "children": [
+                        {
+                            "id": "3",
+                            "parentId": "2",
+                            "projectLevel": "3",
+                            "tenantId": "1",
+                            "projectCode": "B1-01",
+                            "projectName": "蒸汽费",
+                            "isEffective": "1",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "parentId": null,
+            "projectLevel": "1",
+            "tenantId": "1",
+            "projectCode": "B",
+            "projectName": "预算项目22",
+            "isEffective": "1",
+            "children": [
+                {
+                    "id": "21",
+                    "parentId": "1",
+                    "projectLevel": "2",
+                    "tenantId": "1",
+                    "projectCode": "B1",
+                    "projectName": "能源消耗及常规缴费22",
+                    "isEffective": "1",
+                    "children": [
+                        {
+                            "id": "31",
+                            "parentId": "2",
+                            "projectLevel": "3",
+                            "tenantId": "1",
+                            "projectCode": "B1-01",
+                            "projectName": "蒸汽费11",
+                            "isEffective": "1",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

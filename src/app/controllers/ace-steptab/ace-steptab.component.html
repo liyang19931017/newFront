@@ -1,0 +1,11 @@
+<div class="step-tab">
+    <div class="tab" [style.width]="width" *ngFor="let tabArryOne of tabArry;index as i;">
+        <div class="tab-icon">
+          <span *ngIf="i >= selectNumber" ><i class="icon iconfont icon-yuanhuan1 font-14"></i></span>
+          <span *ngIf="i < selectNumber" ><i class="icon iconfont icon-duihao iconClass font-14"></i></span>
+        </div>
+        <div class="tab-text" [style.border-bottom]="selectNumber == i?'1px solid #287AD9':'0'">
+          <span>{{tabArryOne.text}}</span>
+        </div>
+    </div>
+</div>

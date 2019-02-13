@@ -1,0 +1,92 @@
+<div class="table">
+  <div class="table-left" *ngIf="showTree">
+      <app-ace-single-tree #singleTree [dataUrl]="treeDataUrl" [isNeedQuery]="isNeedQuery" [keyName]="keyName"
+      (selectNode)="selectNodeSingle($event)" (complateCallback)="complateCallback()" [dataMethod]="dataMethod"></app-ace-single-tree>
+  </div>
+  <div class="table-right" [style.width]="showTree?'84%':'100%'">
+    <div class="table-query">
+      <div class="table-query-initial">
+        <div class="table-query-condition">
+          <span>报告类型:</span>
+          <app-ace-select (valueChange)="select = $event" [width]="'85px'" [select]="select" [placeholder]="'请选择'" [options]="options"></app-ace-select>
+        </div>
+        <div class="table-query-condition">
+          <app-ace-input [placeholder]="'请输入关键字'" [(value)]="keyValue"></app-ace-input>
+        </div>
+        <div class="table-query-condition">
+          <button nz-button nzType="primary" [nzSize]="'large'">查询</button>
+          <button class="button-margin" nz-button nzType="default" [nzSize]="'large'">重置</button>
+        </div>
+        <div (click)="showMoreParams = !showMoreParams" class="table-query-condition">
+          <span class="hr-cli" *ngIf="!showMoreParams">更多筛选</span>
+          <span class="hr-cli" *ngIf="showMoreParams">简易筛选</span>
+        </div>
+      </div>
+      <div *ngIf="showMoreParams" class="table-query-initial show-more">
+        <div class="table-query-condition">
+          <span>报告类型:</span>
+          <app-ace-select (valueChange)="select = $event" [width]="'85px'" [select]="select" [placeholder]="'请选择'" [options]="options"></app-ace-select>
+        </div>
+        <div class="table-query-condition">
+          <app-ace-input [placeholder]="'请输入关键字'" [(value)]="keyValue"></app-ace-input>
+        </div>
+      </div>
+    </div>
+    <div class="table-operate">
+      <div class="fo-ri">
+        <div class="table-operate-button" (click)="delAll()">
+          <span class="sortspan">批量删除</span>
+        </div>
+        <div class="table-operate-button" (click)="Add()">
+          <span class="sortspan">新增</span>
+        </div>
+        <!-- <div class="table-operate-button" (click)="exportReopt()">
+          <span class="sortspan">导出报告</span>
+        </div>
+        <div class="table-operate-button" (click)="exportReopt()">
+          <span class="sortspan">导出报告</span>
+        </div> -->
+      </div>
+    </div>
+    <div class="table-table">
+      <nz-table #basicTable [nzData]="_dataSet" nzShowSizeChanger [(nzPageSize)]="_pageSize" [nzLoading]="_loading" [nzTotal]="_total"
+        [(nzPageIndex)]="_current" (nzPageIndexChange)="queryData('')" (nzPageSizeChange)="queryData(true)" nzShowTotal nzShowQuickJumper>
+        <thead>
+          <tr>
+            <th nzShowCheckbox [(nzChecked)]="_allChecked" [nzIndeterminate]="_indeterminate" (nzCheckedChange)="_checkAll($event)" *ngIf="isNeedIndex"></th>
+            <th *ngIf="isNeedIndex">
+              <span>序号</span>
+            </th>
+            <th *ngFor="let title of titleArry">
+              <span>{{title}}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data; index as i">
+            <td *ngIf="isNeedIndex" nzShowCheckbox [(nzChecked)]="data.checked" (nzCheckedChange)="_refreshStatus($event)"></td>
+            <td *ngIf="isNeedIndex">{{_pageSize*(_current-1)+i+1}}</td>
+            <td title="{{data[keyOne]}}" *ngFor="let keyOne of dataKey">{{data[keyOne]}}</td>
+            <td style="min-width:100px;">
+              <span>
+                <a class="hr-cli" title="查看" (click)="lookDetail(data)">
+                  查看
+                </a>
+                <a class="hr-cli" title="编辑" (click)="editData(data)">
+                  编辑
+                </a>
+                <a class="hr-cli" title="删除" (click)="delete(data)">
+                  删除
+                </a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+
+</div>
+<!-- <div class="table">
+  <app-ace-table></app-ace-table>
+</div> -->

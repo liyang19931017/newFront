@@ -1,0 +1,7 @@
+<div id="testBudget" class="budget-tree">
+    <input id="key" [ngClass]="{'diaabled':disable}" class="budget-tree-name" [disabled]="disable" (click)="showTree()" type="text" [(ngModel)]="queryName" readonly='readonly' placeholder="">
+    <span id="key1" class="ant-select-arrow budget-tree-img" (click)="showTree()"></span>
+    <div id="key2" class="budget-tree-ul sild-ri budget-dailog" [ngStyle]="{'display':show?'block':'none'}">
+        <ul [id]="treeId" class="ztree"></ul>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="header-goback">
+    <div class="service-content">
+        <div class="back hr-cli font-14" *ngIf="name" (click)="goback()">
+          <Span><i class="anticon anticon-arrow-left"></i></Span>
+          <span>{{name}}</span>
+        </div>
+        <div class="detail" *ngIf="detail">
+            <span class="font-12 co-45">{{detail}}</span>
+        </div>
+        <div class="title font-14 co-85" *ngIf="title">
+          <span>{{title}}</span>
+        </div>
+
+    </div>
+</div>
